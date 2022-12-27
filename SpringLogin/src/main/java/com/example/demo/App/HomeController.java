@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.App;
 
 import java.util.List;
 
@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.Config.CustomerUserDetails;
+import com.example.demo.Entity.User;
 import com.example.demo.Repository.UserRepository;
+import com.example.demo.Service.UserService;
 
 @Controller
 public class HomeController {
@@ -66,13 +68,7 @@ public class HomeController {
             /* NG:ユーザー登録画面に戻る*/
             return "signup_form";
         }
-    	
-//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-//        String encodedPassword = passwordEncoder.encode(user.getPassword());
-//        user.setPassword(encodedPassword);
-//         
-//        userRepo.save(user);
-        
+
         userService.create(user);
         
         return "register_success";

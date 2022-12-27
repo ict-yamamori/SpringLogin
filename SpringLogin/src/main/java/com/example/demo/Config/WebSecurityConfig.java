@@ -45,7 +45,7 @@ public class WebSecurityConfig {
 	        .anyRequest().permitAll()
 		.and().formLogin()
 			.usernameParameter("username")
-	        .defaultSuccessUrl("/userList")
+	        .defaultSuccessUrl("/tasks")
 	        .permitAll()
 		.and().logout().logoutSuccessUrl("/").permitAll();
 

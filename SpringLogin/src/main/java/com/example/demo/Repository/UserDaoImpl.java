@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import com.example.demo.Entity.User;
 
 @Repository("UserDaoImpl")
 public class UserDaoImpl implements UserDao {

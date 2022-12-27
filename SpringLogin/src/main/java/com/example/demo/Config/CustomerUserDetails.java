@@ -5,7 +5,7 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.demo.User;
+import com.example.demo.Entity.User;
 
 public class CustomerUserDetails implements UserDetails {
 	

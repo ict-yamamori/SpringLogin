@@ -6,19 +6,20 @@
 <title>タスク登録</title>
 </head>
 <body>
-	 <form method="post" th:object="${task}" th:action="@{/create_task}">
+	<p>ログイン中のユーザーID：<b th:text="${userid}"></b></p>
+	 <form method="post" th:object="${task}" th:action="@{create_task}">
         <div>
-            <input type="text" placeholder="タスクのタイトル" name="title">
+            <input type="text" placeholder="タスクのタイトル" th:field="*{title}"></input>
         </div>
         <div>
-            <textarea name="detail" placeholder="タスクの詳細" rows="5"></textarea>
+            <textarea name="detail" placeholder="タスクの詳細" rows="5" th:field="*{detail}"></textarea>
         </div>
         <div>
             <label for="due">終了予定日</label>
-            <input type="date" name="end_time" required>
+            <input type="date" name="end_time" th:field="*{end_time}" required>
         </div>
         <div>
-            <button type="submit">作成</button>
+            <button type="submit" class="btn btn-info">作成</button>
             <button type="button" class="btn btn-secondary" onclick="history.back()">戻る</button>
         </div>
     </form>
